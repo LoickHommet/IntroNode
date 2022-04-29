@@ -3,13 +3,13 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
   try {
-      // DEBUT MIDDLEWARE D'INTERCEPTION
-      console.log(req.httpVersion, req.url, req.method)
-    if (req.url == "/") {
-    //   console.loge("yee"); // error test
+    
+    if (req.url == "/") {  
+      timer.start('myTimer1');  
       res.writeHead(200, { "content-type": "text/html" });
       res.write("<h1>Home page</h2>");
       res.end();
+      // console.log(timer.stop('myTimer1'));
     } else {
       res.writeHead(404, { "content-type": "text/html" });
       res.write("<h1> 404 Not Found</h1>");
@@ -22,14 +22,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
-// const server = http.createServer();
-
-// server.on('connection', (socket) => {
-//     console.log(socket)
-// });
 
 server.listen(3000);
 
 console.log("server ecoute");
 
-// curl -v localhost:3000

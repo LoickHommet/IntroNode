@@ -1,11 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
+// parti 1
 
-// const text = fs.readFileSync('/assets/index.html', {encoding: "utf-8"})
-// const ecrire = path.join(__dirname,text);
-//  const textLog = fs.readFileSync(__dirname, '/src/log.txt', {encoding: "utf-8"})
-const ecrireLog = path.join(__dirname, '/src/log.txt');
-// console.log(textLog)
-// console.log(ecrire)
-console.log(ecrireLog)
+const chemainAbsoluIndexHTml = path.join(__dirname,'../assets/index.html');
+const chemainAbsoluIndexLog = path.join(__dirname, 'log.txt');
+console.log(chemainAbsoluIndexHTml);
+console.log(chemainAbsoluIndexLog);
+
+ // process.exit(1)  // debut la parti  1
+
+// parti 2
+
+const letureHtml = fs.readFileSync(chemainAbsoluIndexHTml, "utf-8");
+const letureLog = fs.readFileSync(chemainAbsoluIndexLog, "utf-8");
+console.log(letureHtml)
+console.log(letureLog)
+
